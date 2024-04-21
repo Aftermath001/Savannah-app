@@ -1,0 +1,11 @@
+{
+  "name": "savannah-app",
+  "version": "1.0.0",
+  "description": "Restful API ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alvin Adams Asiachi",
+  "license": "ISC"
+}
