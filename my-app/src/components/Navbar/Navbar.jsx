@@ -5,7 +5,7 @@ import React from 'react'
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link } from 'react-router-dom';
 import './Navbar.scss'
-
+import Button from '@mui/material/Button';
 
 
 
@@ -15,14 +15,14 @@ const Navbar = () => {
     <div className='navbar'>
         <div className="wrapper">
             <div className="center">
-                <Link className='links' to="/">SAVANNAH INFORMATICS</Link>
+                <Link className='links' to="/">SAVANNAH MUSIC</Link>
             </div>
             <div className="right">
                 <div className="">
                     <Link className='links' to="/">Homepage</Link>
                 </div>
                 <div className="">
-                    <Link className='links' to="/">ALbum</Link>
+                    <Link className='links' to="/">Album</Link>
                 </div>
                 <div className="">
                     <Link className='links' to="/">Photos</Link>
@@ -30,6 +30,7 @@ const Navbar = () => {
                 <div className="">
                     <Link className='links' to="/">User</Link>
                 </div>
+                <Button variant="contained">GET STARTED</Button>
             
             </div>
         </div>
