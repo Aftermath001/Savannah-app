@@ -22,15 +22,20 @@ const Navbar = () => {
                     <Link className='links' to="/">Homepage</Link>
                 </div>
                 <div className="">
-                    <Link className='links' to="/">Album</Link>
+                    <Link className='links' to="/photo">Photos</Link>
                 </div>
                 <div className="">
-                    <Link className='links' to="/">Photos</Link>
+                    <Link className='links' to="/user">User</Link>
                 </div>
                 <div className="">
-                    <Link className='links' to="/">User</Link>
+                    <Link className='links' to="/album">Album</Link>
                 </div>
-                <Button variant="contained">GET STARTED</Button>
+                <div>
+                <Link to ='/login' className='d-flex align-items-center gap-10 text-white'>
+                        <Button variant="contained">GET STARTED</Button>
+                </Link>
+                </div>
+               
             
             </div>
         </div>
