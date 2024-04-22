@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import BreadCrumb from '../../components/Breadcrumb/Breadcrumb'
 import Meta from '../../components/Meta/Meta'
+
 import './User.scss'
 const User = () => {
 
@@ -23,17 +24,17 @@ const User = () => {
           <div className='col-3'>
           <div className='filter-card mb-3'>
               <h3 className='filter-title'>USER PAGE</h3>
-              <table>
+              <table className="table">
                   <thead style={{
                     borderBottom: 'solid 3px blue',
                     background: 'green',
                     color: 'white',
                     fontWeight: 'bold', }}>
                     <tr>
-                        <th>ID</th>
-                        <th>NAME</th>
-                        <th>USERNAME</th>
-                        <th>PHONE</th>
+                      <th>User ID</th>
+                      <th>NAME</th>
+                      <th>USERNAME</th>
+                      <th>PHONE NO:</th>
                     </tr>
                     
                   </thead>

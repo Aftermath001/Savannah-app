@@ -27,19 +27,20 @@ const Photo = () => {
                             background: 'green',
                             color: 'white',
                             fontWeight: 'bold', }}>
-                            <tr>
-                              
-                                <th>ID</th>
-                                <th>NAME</th>
-                                <th>USERNAME</th>
-                                <th>PHONE</th>
-                            </tr>
+                           <tr>
+                            <th>ALBUM ID</th>
+                            <th>ID</th>
+                            <th>TITLE</th>
+                            <th>PHOTO URL:</th>
+                            <th>PHOTO THUMBNAIL:</th>
+                           </tr>
                             
                           </thead>
                           <tbody>
                             {photos.map((photo) => (
                               <tr key={photo.id}>
                                 <td>{photo.albumId}</td>
+                                <td>{photo.id}</td>
                                 <td>{photo.title}</td>
                                 <td>{photo.url}</td>
                                 <td>{photo.thumbnailUrl}</td>

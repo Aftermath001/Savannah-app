@@ -4,8 +4,11 @@ import BreadCrumb from '../../components/Breadcrumb/Breadcrumb'
 import Meta from '../../components/Meta/Meta'
 
 const Album = () => {
-  const [albums, setAlbums] = useState([]);
 
+
+   // creating useState variables
+  const [albums, setAlbums] = useState([]);
+// fetching data using UseEffect from the API
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums")
       .then((res) => res.json())
@@ -25,25 +28,29 @@ const Album = () => {
           <div className='filter-card mb-3'>
               <h3 className='filter-title'>ALBUMS PAGE</h3>
               
-                <table>
+                <table className="table">
                   <thead style={{
                     borderBottom: 'solid 3px blue',
                     background: 'green',
                     color: 'white',
                     fontWeight: 'bold', }}>
                     <tr>
-                        <th>ID</th>
-                        <th>TITLE</th>
+                      <th>USER_ID</th>
+                      <th>ALBUM-ID</th>
+                      <th>TITLE</th>
+                      
                     </tr>
                     
                   </thead>
                   <tbody>
                     {albums.map((album) => (
                       <tr>
-                    
-                        {/* <td>{album.userId}</td> */}
+                        
+                        <td>{album.userId}</td>
                         <td>{album.id}</td>
                         <td>{album.title}</td>
+                       
+                  
                       </tr>
                 ))}
                 </tbody>
