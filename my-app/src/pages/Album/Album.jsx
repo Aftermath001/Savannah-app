@@ -12,7 +12,7 @@ const Album = () => {
       .then((albums) => setAlbums(albums));
 
   }, []);
-  
+  // console.log(albums)
 
   return (
     <>

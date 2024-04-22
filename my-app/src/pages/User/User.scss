@@ -1,0 +1,64 @@
+.filter-card {
+    margin-bottom: 20px; /* Adjust margin as needed */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-title {
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    font-weight: bold;
+  }
+  
+  .filter-table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    th,
+    td {
+      padding: 12px 8px;
+      text-align: left;
+    }
+  
+    th {
+      /* Optional: Add styles specific to table headers */
+      &:nth-child(2) {
+        text-align: center; /* Align content to center */
+      }
+    }
+  
+    tbody {
+      max-height: 360px; /* Maximum height for tbody, adjust as needed */
+      overflow-y: auto; /* Enable vertical scrolling */
+      display: block;
+  
+      tr {
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #f5f5f5; /* Change background color on hover */
+        }
+  
+        td {
+          /* Align content to left */
+          &:nth-child(2) {
+            text-align: left;
+          }
+  
+          /* Align content to center */
+          &:nth-child(3) {
+            text-align: center;
+          }
+  
+          /* Align content to left */
+          &:nth-child(4) {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+  
