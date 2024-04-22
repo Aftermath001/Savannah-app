@@ -28,6 +28,7 @@ const Photo = () => {
                             color: 'white',
                             fontWeight: 'bold', }}>
                             <tr>
+                              
                                 <th>ID</th>
                                 <th>NAME</th>
                                 <th>USERNAME</th>
