@@ -1,5 +1,6 @@
 .navbar{
     height: 80px;
+    gap: 50px;
 
     .wrapper{
         padding: 10px 30px;
@@ -24,7 +25,7 @@
     }
     .right{
         display: flex;
-        align-items: center;
+        align-items: right;
         gap: 25px;
         
         .icons{
