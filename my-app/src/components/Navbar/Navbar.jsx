@@ -19,7 +19,7 @@ const Navbar = () => {
             </div>
             <div className="right">
                 <div className="">
-                    <Link className='links' to="/">Homepage</Link>
+                    <Link className='links' to="/" style={{textdecoration : "none"}}>Homepage</Link>
                 </div>
                 <div className="">
                     <Link className='links' to="/photo">Photos</Link>
