@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import BreadCrumb from '../../components/Breadcrumb/Breadcrumb';
 import Meta from '../../components/Meta/Meta';
-import { Link } from 'react-router-dom';
+import Editform from "../../components/Editform/Editform";
 import './Photo.scss';
 
 const Photo = () => {
   const [photos, setPhotos] = useState([]);
+  const [editId, setEditId] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const photosPerPage = 10;
 
@@ -15,12 +16,26 @@ const Photo = () => {
       .then((photos) => setPhotos(photos));
   }, []);
 
+  function handleUpdate(updatedPhoto){
+    const updatedPhotos = photos.map((photo) =>
+    photo.id === updatedPhoto.id ? updatedPhoto : photo
+  );
+  setPhotos(updatedPhotos);
+  setEditId(null)
+  }
   // Pagination Logic
   const indexOfLastPhoto = currentPage * photosPerPage;
   const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
   const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // function handleUpdate(updatedTransaction) {
+  //   const updatedTransactions = transactions.map((transaction) =>
+  //   transaction.id === updatedTransaction.id ? updatedTransaction : transaction
+  //   );
+  //   setTransactions(updatedTransactions);
+  //   setEditId(null);
+  //   }
 
   return (
     <>
@@ -39,7 +54,17 @@ const Photo = () => {
                     <p>Album ID: {photo.albumId}</p>
                     <p>ID: {photo.id}</p>
                     <img src={photo.url} alt='album-pic' className='img-fluid mb-2' />
-                    <Link><button className="button edit-button">Edit</button></Link>
+                    
+                    {editId === photo.id ? (
+                      <Editform
+                        photo={photo}
+                        onEdit={handleUpdate}
+                        onCancel={() => setEditId(null)}
+                      />
+                      // creating buttons for edit and delete.
+                    ) : ( <button id="edit" onClick={()=> setEditId(photo.id)}> Edit </button>)}
+          
+                   
                   </div>
                 </div>
               </div>
@@ -58,6 +83,7 @@ const Photo = () => {
             </ul>
           </nav>
         </div>
+        
       </div>
     </>
   );
