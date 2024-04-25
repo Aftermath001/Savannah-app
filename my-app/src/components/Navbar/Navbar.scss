@@ -1,7 +1,10 @@
 .navbar{
     height: 80px;
     gap: 50px;
-
+    .links {
+        text-decoration: none;
+        font-size: larger;
+    }
     .wrapper{
         padding: 10px 30px;
         display: flex;
