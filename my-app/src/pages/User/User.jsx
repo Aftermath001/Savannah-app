@@ -4,8 +4,10 @@ import BreadCrumb from "../../components/Breadcrumb/Breadcrumb";
 import Meta from "../../components/Meta/Meta";
 
 import "./User.scss";
+
 const User = () => {
   const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const usersPerPage = 4;
 
@@ -15,7 +17,10 @@ const User = () => {
       .then((users) => setUsers(users));
   }, []);
 
-  // Pagination Logic
+  const handleUserClick = (user) => {
+    setSelectedUser(user);
+  };
+
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
@@ -31,7 +36,10 @@ const User = () => {
           <div className="row">
             {currentUsers.map((user) => (
               <div key={user.id} className="col-6">
-                <div className="card user-card">
+                <div
+                  className="card user-card"
+                  onClick={() => handleUserClick(user)}
+                >
                   <div className="card-header">
                     <h5 className="card-title">NAME: {user.name}</h5>
                   </div>
@@ -39,8 +47,6 @@ const User = () => {
                     <p>User ID: {user.id}</p>
                     <p>Username: {user.username}</p>
                     <p>Email: {user.email}</p>
-                    {/* Add other user data as needed */}
-                    <button className="button edit-button">Edit</button>
                   </div>
                 </div>
               </div>
@@ -66,6 +72,15 @@ const User = () => {
           )}
         </ul>
       </nav>
+      {/* Display selected user info */}
+      {selectedUser && (
+        <div className="user-info-container">
+          <h2>{selectedUser.name}'s Information</h2>
+          <p>User ID: {selectedUser.id}</p>
+          <p>Username: {selectedUser.username}</p>
+          <p>Email: {selectedUser.email}</p>
+        </div>
+      )}
     </>
   );
 };
