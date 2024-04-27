@@ -1,102 +1,187 @@
-.photo-card {
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+// Photo.scss
+
+// Photo.scss
+
+.photo-wrapper {
   padding: 20px;
-  transition: box-shadow 0.3s ease;
-  width: calc(70% - 60px); // Reduce card size by 50% and subtract padding
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
 
-  &:hover {
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  }
+    .row {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr); // Set 5 columns
+      
+      .photo-card {
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        transition: box-shadow 0.3s ease;
+        width: calc(90% - 10px); // Reduce card size by 50% and subtract padding
+        
+        .card-body {
+          padding: 15px;
+          
+          img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+          }
 
-  .card-header {
-    margin-bottom: 10px;
-  }
+          .button-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-  .card-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #333333;
-  }
+            .edit-button {
+              background-color: #007bff;
+              color: #fff;
+              border: none;
+              padding: 8px 15px;
+              border-radius: 5px;
+              cursor: pointer;
+              transition: background-color 0.3s;
 
-  .card-body {
-    padding: 0;
-
-    p {
-      margin-bottom: 8px;
-      font-size: 14px;
-      color: #666666;
+              &:hover {
+                background-color: #0056b3;
+              }
+            }
+          }
+        }
+      }
     }
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-      padding-bottom: 10px;
-    }
-  }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
 
-  .edit-button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      .page-item {
+        margin: 0 5px;
 
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
-}
+        .page-link {
+          padding: 8px 12px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #007bff;
+          cursor: pointer;
+          transition: background-color 0.3s;
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-
-  .page-item {
-    margin: 0 5px;
-  }
-
-  .page-link {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #e0e0e0;
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
     }
   }
 }
 
-.home-wrapper {
-  display: flex;
-  justify-content: center; // Center the content horizontally
-}
+// .photo-card {
+//   background-color: #ffffff;
+//   border-radius: 8px;
+//   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+//   padding: 20px;
+//   transition: box-shadow 0.3s ease;
+//   width: calc(70% - 60px); // Reduce card size by 50% and subtract padding
 
-.container-xxl {
-  display: flex;
-  flex-wrap: wrap; // Allow items to wrap to the next line
-  justify-content: center; // Center the content horizontally
-  margin-top: 50px; // Add margin to move the cards to the center
-  margin-left: 90px;
-}
+//   &:hover {
+//     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+//   }
 
-.row {
-  display: flex;
-  flex-wrap: wrap; // Allow items to wrap to the next line
-  margin: -15px; // Compensate for the default margin
-}
+//   .card-header {
+//     margin-bottom: 10px;
+//   }
 
-.col-4 {
-  flex: 0 0 calc(50% - 30px); // Make each column take up 50% of the container width and subtract padding
-  max-width: calc(50% - 30px); // Ensure each column takes up 50% of the container width and subtract padding
-  padding: 15px; // Add some space between columns
-}
+//   .card-title {
+//     font-size: 16px;
+//     font-weight: 600;
+//     color: #333333;
+//   }
+
+//   .card-body {
+//     padding: 0;
+
+//     p {
+//       margin-bottom: 8px;
+//       font-size: 14px;
+//       color: #666666;
+//     }
+
+//     img {
+//       width: 100%;
+//       border-radius: 8px;
+//       padding-bottom: 10px;
+//     }
+//   }
+
+//   .edit-button {
+//     background-color: #007bff;
+//     color: #ffffff;
+//     border: none;
+//     border-radius: 4px;
+//     padding: 8px 16px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+
+//     &:hover {
+//       background-color: #0056b3;
+//     }
+//   }
+// }
+
+// .pagination {
+//   display: flex;
+//   justify-content: center;
+//   list-style-type: none;
+//   padding: 0;
+
+//   .page-item {
+//     margin: 0 5px;
+//   }
+
+//   .page-link {
+//     background-color: #f0f0f0;
+//     border: 1px solid #ccc;
+//     color: #333;
+//     padding: 8px 12px;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+
+//     &:hover {
+//       background-color: #e0e0e0;
+//     }
+//   }
+// }
+
+// .home-wrapper {
+//   display: flex;
+//   justify-content: center; // Center the content horizontally
+// }
+
+// .container-xxl {
+//   display: flex;
+//   flex-wrap: wrap; // Allow items to wrap to the next line
+//   justify-content: center; // Center the content horizontally
+//   margin-top: 50px; // Add margin to move the cards to the center
+//   margin-left: 90px;
+// }
+
+// .row {
+//   display: flex;
+//   flex-wrap: wrap; // Allow items to wrap to the next line
+//   margin: -15px; // Compensate for the default margin
+// }
+
+// .col-4 {
+//   flex: 0 0 calc(50% - 30px); // Make each column take up 50% of the container width and subtract padding
+//   max-width: calc(50% - 30px); // Ensure each column takes up 50% of the container width and subtract padding
+//   padding: 15px; // Add some space between columns
+// }

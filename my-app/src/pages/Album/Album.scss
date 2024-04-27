@@ -1,79 +1,93 @@
+// Album.scss
+
 .album-wrapper {
-  .album-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: box-shadow 0.3s ease;
+  padding: 20px 0;
 
-    &:hover {
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  .container-xxl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+    
+    
+
+    .card {
+      flex: 0 0 calc(50% - 20px); // Adjust card width for larger screens
+      max-width: calc(70% - 20px); // Adjust card width for larger screens
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-header {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .card-body {
+        padding: 20px;
+        text-align: center;
+
+        p {
+          margin-bottom: 10px;
+        }
+      }
     }
 
-    .card-header {
-      margin-bottom: 15px;
+    @media (max-width: 992px) {
+      .card {
+        flex: 0 0 calc(25% - 20px); // Adjust card width for medium screens
+        max-width: calc(25% - 20px); // Adjust card width for medium screens
+      }
     }
 
-    .card-title {
-      font-size: 18px;
-      font-weight: 600;
-      color: #333333;
+    @media (max-width: 768px) {
+      .card {
+        flex: 0 0 calc(50% - 20px); // Adjust card width for smaller screens
+        max-width: calc(50% - 20px); // Adjust card width for smaller screens
+      }
     }
 
-    .card-body {
-      padding: 0;
-
-      p {
-        margin-bottom: 10px;
-        font-size: 16px;
-        color: #666666;
+    @media (max-width: 576px) {
+      .card {
+        flex: 0 0 calc(100% - 20px); // Adjust card width for extra small screens
+        max-width: calc(100% - 20px); // Adjust card width for extra small screens
       }
     }
   }
-}
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 20px 0; 
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
 
-  .page-item {
-    margin: 0 5px;
-  }
+    .page-item {
+      margin: 0 5px;
 
-  .page-link {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    color: #333;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      .page-link {
+        padding: 8px 12px;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        background-color: #fff;
+        color: #007bff;
+        cursor: pointer;
+        transition: background-color 0.3s;
 
-    &:hover {
-      background-color: #e0e0e0;
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
     }
-  }
-}
-.selected-album-info {
-  background-color:#557A95;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin: 20px;
-
-  h2 {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;;
-    margin-bottom: 10px;
-  }
-
-  p {
-    font-size: 16px;
-    color: #000;;
-    margin-bottom: 8px;
   }
 }

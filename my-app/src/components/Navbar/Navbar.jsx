@@ -1,53 +1,44 @@
-import React from 'react'
-// import SearchIcon from '@mui/icons-material/Search';
-// import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
-// import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link, useNavigate } from 'react-router-dom'
-import './Navbar.scss'
-import Button from '@mui/material/Button';
-import { useAuth } from '../../contexts/authContext'
-import { doSignOut } from '../../firebase/auth'
+// Navbar.js
 
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import { useAuth } from '../../contexts/authContext';
+import { doSignOut } from '../../firebase/auth';
+import './Navbar.scss';
 
 const Navbar = () => {
-    const navigate = useNavigate()
-    
-  return (
-    <div className='navbar'>
-        <div className="wrapper">
-            <div className="center">
-                <Link className='links' to="/">SAVANNAH MUSIC</Link>
-            </div>
-            <div className="right">
-                <div className="">
-                    <Link className='links' to="/home" style={{textdecoration : "none"}}>Homepage</Link>
-                </div>
-                <div className="">
-                    <Link className='links' to="/photo">Photos</Link>
-                </div>
-                <div className="">
-                    <Link className='links' to="/user">User</Link>
-                </div>
-                <div className="">
-                    <Link className='links' to="/album">Album</Link>
-                </div>
-                <div>
-                <Link to ='/' className='d-flex align-items-center gap-10 text-white'>
-                        <Button variant="contained">Login</Button>
-                </Link>
-                </div>
-                <div>
-                <Link to ='/register' className='d-flex align-items-center gap-10 text-white'>
-                        <Button variant="contained">Register</Button>
-                </Link>
-                </div>
-               
-            
-            </div>
-        </div>
-    </div>
-  )
-}
+    const navigate = useNavigate();
+    const { userLoggedIn } = useAuth();
 
-export default Navbar
+    return (
+        <nav className="navbar">
+            <div className="navbar-items">
+                {
+                    userLoggedIn
+                        ?
+                        <>
+                            <ResponsiveLink to="/photo"> Photos</ResponsiveLink>
+                            <ResponsiveLink to="/user">User</ResponsiveLink>
+                            <ResponsiveLink to="/album">Album</ResponsiveLink>
+                            <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='logout-button'>Logout</button>
+                        </>
+                        :
+                        <>
+                            <ResponsiveLink to="/home">Homepage</ResponsiveLink>
+                            <ResponsiveLink to='/'>Login</ResponsiveLink>
+                            <ResponsiveLink to='/register'>Register New Account</ResponsiveLink>
+                        </>
+                }
+            </div>
+        </nav>
+    );
+};
+
+const ResponsiveLink = ({ to, children }) => {
+    return (
+        <Link to={to}>{children}</Link>
+    );
+};
+
+export default Navbar;
