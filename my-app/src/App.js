@@ -7,6 +7,8 @@ import Login from './pages/Login/Login';
 import Album from './pages/Album/Album';
 import Photo from './pages/Photo/Photo';
 import User from './pages/User/User';
+import Register from './pages/Register/Register';
+import { AuthProvider } from './contexts/authContext';
 
 // import About from './pages/About';
 // import Contact from './pages/Contact';
@@ -22,19 +24,23 @@ import User from './pages/User/User';
 function App() {
   return (
     <>
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout/>}>
-            <Route index element={<Home/>}/>
+            <Route index element={<Login/>}/>
             <Route path='album' element={<Album/>}/>
             <Route path='user' element={<User/>}/>
             <Route path='photo' element={<Photo/>}/>
-            <Route path='login' element={<Login/>}/>
+            <Route path='home' element={<Home/>}/>
+            <Route path='register' element={<Register/>}/>
 
         </Route>
        </Routes>
   
     </BrowserRouter>
+    </AuthProvider>
+    
   </>
   )
   

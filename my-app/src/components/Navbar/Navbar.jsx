@@ -3,14 +3,16 @@ import React from 'react'
 // import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 // import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'
 import './Navbar.scss'
 import Button from '@mui/material/Button';
-
+import { useAuth } from '../../contexts/authContext'
+import { doSignOut } from '../../firebase/auth'
 
 
 const Navbar = () => {
-
+    const navigate = useNavigate()
+    
   return (
     <div className='navbar'>
         <div className="wrapper">
@@ -19,7 +21,7 @@ const Navbar = () => {
             </div>
             <div className="right">
                 <div className="">
-                    <Link className='links' to="/" style={{textdecoration : "none"}}>Homepage</Link>
+                    <Link className='links' to="/home" style={{textdecoration : "none"}}>Homepage</Link>
                 </div>
                 <div className="">
                     <Link className='links' to="/photo">Photos</Link>
@@ -31,8 +33,13 @@ const Navbar = () => {
                     <Link className='links' to="/album">Album</Link>
                 </div>
                 <div>
-                <Link to ='/login' className='d-flex align-items-center gap-10 text-white'>
-                        <Button variant="contained">GET STARTED</Button>
+                <Link to ='/' className='d-flex align-items-center gap-10 text-white'>
+                        <Button variant="contained">Login</Button>
+                </Link>
+                </div>
+                <div>
+                <Link to ='/register' className='d-flex align-items-center gap-10 text-white'>
+                        <Button variant="contained">Register</Button>
                 </Link>
                 </div>
                
