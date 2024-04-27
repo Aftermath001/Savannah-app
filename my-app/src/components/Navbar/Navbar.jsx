@@ -18,7 +18,7 @@ const Navbar = () => {
                     userLoggedIn
                         ?
                         <>
-                            <ResponsiveLink to="/photo">Photos</ResponsiveLink>
+                            <ResponsiveLink to="/photo"> Photos</ResponsiveLink>
                             <ResponsiveLink to="/user">User</ResponsiveLink>
                             <ResponsiveLink to="/album">Album</ResponsiveLink>
                             <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='logout-button'>Logout</button>
