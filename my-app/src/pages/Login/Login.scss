@@ -4,7 +4,7 @@
 }
 
 .container-xxl {
-  padding-top:50px ;
+  padding-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,77 +17,85 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  h3 {
+    color: #333;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+
+    .input-group {
+      margin-bottom: 20px;
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #666;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #2879fe;
+        }
+      }
+    }
+
+    .error-message {
+      color: #ff4d4f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn {
+      background-color: #2879fe;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:hover {
+        background-color: #1a5bb8;
+      }
+
+      &:disabled {
+        background-color: #1a5bb8;
+        cursor: not-allowed;
+      }
+
+      .google-icon {
+        margin-left: 8px;
+      }
+    }
+  }
 }
 
-.login-card h3 {
-  color: #333;
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #666;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: border-color 0.3s ease;
-}
-
-.input-group input:focus {
-  border-color: #2879fe;
-}
-
-.error-message {
-  color: #ff4d4f;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.btn {
-  background-color: #2879fe;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
-  padding: 12px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #2879fe;
-}
-
-.btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .login-card {
     padding: 20px;
-  }
 
-  .login-card h3 {
-    font-size: 20px;
+    h3 {
+      font-size: 20px;
+    }
   }
 }

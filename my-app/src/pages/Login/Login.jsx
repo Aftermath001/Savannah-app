@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {  Navigate, Link } from 'react-router-dom'
+import GoogleIcon from '@mui/icons-material/Google';
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from '../../firebase/auth'
 import './Login.scss'
 import { useAuth } from '../../contexts/authContext/index'
@@ -95,10 +96,10 @@ const Login = () => {
             {/* Google Sign In Button */}
             <button
               disabled={isSigningIn}
-              onClick={(e) => { onGoogleSignIn(e) }}
-              className="btn"
-            >
-              {isSigningIn ? 'Signing In...' : 'Continue with Google'}
+              onClick={(e) => { onGoogleSignIn(e); }}
+              className={`btn ${isSigningIn ? 'btn-disabled' : ''}`}
+              >
+              {isSigningIn ? 'Signing In...' : 'Continue with Google'} <GoogleIcon />
             </button>
           </div>
         </main>
