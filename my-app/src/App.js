@@ -28,11 +28,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout/>}>
-            <Route index element={<Login/>}/>
+            <Route index element={<Home/>}/>
             <Route path='album' element={<Album/>}/>
             <Route path='user' element={<User/>}/>
             <Route path='photo' element={<Photo/>}/>
-            <Route path='home' element={<Home/>}/>
+            <Route path='login' element={<Login/>}/>
             <Route path='register' element={<Register/>}/>
 
         </Route>

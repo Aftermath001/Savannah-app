@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import { useAuth } from '../../contexts/authContext';
 import { doSignOut } from '../../firebase/auth';
 import './Navbar.scss';
@@ -25,8 +25,8 @@ const Navbar = () => {
                         </>
                         :
                         <>
-                            <ResponsiveLink to="/home">Homepage</ResponsiveLink>
-                            <ResponsiveLink to='/'>Login</ResponsiveLink>
+                            <ResponsiveLink to="/">Homepage</ResponsiveLink>
+                            <ResponsiveLink to='/login'>Login</ResponsiveLink>
                             <ResponsiveLink to='/register'>Register New Account</ResponsiveLink>
                         </>
                 }
