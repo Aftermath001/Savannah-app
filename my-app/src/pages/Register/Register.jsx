@@ -83,7 +83,7 @@ const Register = () => {
 
             {/* Already have an account */}
             <div className="text-sm text-center">
-                Already have an account? <Link to={'/'} style={{ textDecoration: 'none', fontWeight: 'bold' }}>Sign in</Link>
+                Already have an account? <Link to={'/login'} style={{ textDecoration: 'none', fontWeight: 'bold' }}>Sign in</Link>
             </div>
             </form>
         </div>
