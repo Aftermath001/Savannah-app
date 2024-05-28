@@ -1,93 +1,95 @@
-// Album.scss
-
 .album-wrapper {
   padding: 20px 0;
 
   .container-xxl {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    
-    
-    
+    .row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); // 4 columns
+      gap: 20px;
 
-    .card {
-      flex: 0 0 calc(50% - 20px); // Adjust card width for larger screens
-      max-width: calc(70% - 20px); // Adjust card width for larger screens
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
-      cursor: pointer;
-
-      &:hover {
-        transform: translateY(-5px);
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
       }
 
-      .card-header {
-        background-color: #007bff;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
+      @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr); // 2 columns on smaller screens
       }
 
-      .card-body {
-        padding: 20px;
-        text-align: center;
+      @media (max-width: 576px) {
+        grid-template-columns: 1fr; // 1 column on extra small screens
+      }
 
-        p {
-          margin-bottom: 10px;
+      .album-card {
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+          background-color: #007bff;
+          color: #fff;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .card-body {
+          padding: 20px;
+          text-align: center;
+
+          p {
+            margin-bottom: 10px;
+          }
         }
       }
     }
 
-    @media (max-width: 992px) {
-      .card {
-        flex: 0 0 calc(25% - 20px); // Adjust card width for medium screens
-        max-width: calc(25% - 20px); // Adjust card width for medium screens
-      }
-    }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      width: 100%;
 
-    @media (max-width: 768px) {
-      .card {
-        flex: 0 0 calc(50% - 20px); // Adjust card width for smaller screens
-        max-width: calc(50% - 20px); // Adjust card width for smaller screens
-      }
-    }
+      .page-item {
+        margin: 0 5px;
 
-    @media (max-width: 576px) {
-      .card {
-        flex: 0 0 calc(100% - 20px); // Adjust card width for extra small screens
-        max-width: calc(100% - 20px); // Adjust card width for extra small screens
+        .page-link {
+          padding: 8px 12px;
+          border: 1px solid #007bff;
+          border-radius: 5px;
+          background-color: #fff;
+          color: #007bff;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
       }
     }
   }
 
-  .pagination {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
+  .selected-album-info {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    .page-item {
-      margin: 0 5px;
+    h2 {
+      margin-bottom: 10px;
+    }
 
-      .page-link {
-        padding: 8px 12px;
-        border: 1px solid #007bff;
-        border-radius: 5px;
-        background-color: #fff;
-        color: #007bff;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: #f0f0f0;
-        }
-      }
+    p {
+      margin-bottom: 5px;
     }
   }
 }

@@ -1,81 +1,54 @@
-
 .hero--section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 133.333px 85.333px 133.333px;
+  padding: 80px 50px; /* Adjusted padding */
   justify-content: space-between;
   align-items: center;
   gap: 32px;
-  background-color: var(--bg-shade);
+  background: linear-gradient(to right, #7f00ff, #e100ff); /* Gradient background */
+  color: #fff; /* Changed text color to white */
 
   .hero--section--content-box {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
-
-  }
-
-  .hero--section--content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 21.33px;
+    gap: 20px;
   }
 
   .hero--section--title {
-    color: var(--heading-color);
+    font-size: 40px; /* Decreased font size */
     font-weight: 700;
-    font-size: 74.667px;
-    line-height: 90px;
-    align-self: stretch;
-
-    &-color {
-      color: var(--primary);
-    }
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow for contrast */
   }
 
   .hero--section--description {
-    color: var(--darkblue);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 26px;
+    font-size: 18px; /* Decreased font size */
+    line-height: 1.5;
   }
 
   .hero--section--img {
     display: flex;
+    justify-content: center; /* Center align the slider */
+  }
 
-    > img {
-      width: 100%;
-      height: 100%;
-    }
+  .hero--section--img img {
+    max-width: 100%; /* Ensure slider image doesn't overflow */
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .hero--section {
-    display: flex;
-    flex-direction: column-reverse;
-    padding-bottom: 70px;
+    padding: 60px 30px; /* Adjusted padding */
   }
-  .hero--section--title,
-  .hero--section--description {
-    text-align: center;
-  }
-  .hero--section--content,
-  .hero--section--content--box {
-    align-items: center;
-  }
-  .hero--section--title {
-    font-size: 35px;
-    line-height: 40px;
-  }
-  .hero--section--content--box {
-    gap: 10px;
-  }
-  
-  
-  
-  
-}
 
+  .hero--section--title {
+    font-size: 30px; /* Decreased font size */
+    line-height: 1.2;
+  }
+
+  .hero--section--description {
+    font-size: 16px; /* Decreased font size */
+    line-height: 1.5;
+  }
+}
