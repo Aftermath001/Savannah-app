@@ -1,54 +1,54 @@
 .hero--section {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  padding: 80px 50px; /* Adjusted padding */
-  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive grid layout */
+  padding: 133.333px 85.333px 133.333px;
   align-items: center;
+  justify-content: space-between;
   gap: 32px;
-  background: linear-gradient(to right, #7f00ff, #e100ff); /* Gradient background */
-  color: #fff; /* Changed text color to white */
+  background: linear-gradient(to right, #7f00ff, #e100ff);
+  color: #fff;
 
   .hero--section--content-box {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 32px;
   }
 
   .hero--section--title {
-    font-size: 40px; /* Decreased font size */
+    font-size: 74.667px;
     font-weight: 700;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Added text shadow for contrast */
+    line-height: 90px;
+    align-self: stretch;
   }
 
   .hero--section--description {
-    font-size: 18px; /* Decreased font size */
+    font-size: 18px;
     line-height: 1.5;
   }
 
   .hero--section--img {
     display: flex;
-    justify-content: center; /* Center align the slider */
+    justify-content: center;
   }
 
   .hero--section--img img {
-    max-width: 100%; /* Ensure slider image doesn't overflow */
+    max-width: 100%;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .hero--section {
-    padding: 60px 30px; /* Adjusted padding */
+    padding: 60px 30px;
   }
 
   .hero--section--title {
-    font-size: 30px; /* Decreased font size */
+    font-size: 30px;
     line-height: 1.2;
   }
 
   .hero--section--description {
-    font-size: 16px; /* Decreased font size */
+    font-size: 16px;
     line-height: 1.5;
   }
 }
