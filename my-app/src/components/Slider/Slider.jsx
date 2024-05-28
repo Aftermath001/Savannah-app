@@ -30,9 +30,6 @@ const nextSlide = () =>{
             <img src={ img1} alt="HomeSlider"/>
             <img src={ img2} alt="HomeSlider"/>
             <img src={ img3} alt="HomeSlider"/>
-            {/* <img src={data[0]} alt='HomepageSlider'/>
-            <img src={data[1]} alt='HomepageSlider'/>
-            <img src={data[2]} alt='HomepageSlider'/> */}
         </div>
         <div className="icons">
             <div className="icon" onClick={prevSlide}>

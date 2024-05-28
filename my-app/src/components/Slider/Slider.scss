@@ -1,54 +1,59 @@
 .slider {
-    height: calc(100vh - 80px); /* Adjusted for the navbar height */
-    width: 100vw;
-    position: relative;
-    overflow: hidden;
-    padding-top:100px ;
-  
-    .container {
-      width: 300vw;
+  height: calc(100vh - 80px); /* Adjusted for the navbar height */
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  padding-top:100px ;
+
+  .container {
+    width: 300vw;
+    height: 100%;
+    display: flex;
+    transition: all 1s ease;
+
+    img {
+      width: 100vw;
       height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .icons {
+    width: fit-content;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    gap: 20px; /* Increased gap between icons */
+    bottom: 5%;
+    margin: auto;
+
+    .icon {
+      width: 60px; /* Increased icon size */
+      height: 60px;
+      border-radius: 50%; /* Rounded icon shape */
+      background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
       display: flex;
-      transition: all 1s ease;
-  
-      img {
-        width: 100vw;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  
-    .icons {
-      width: fit-content;
-      display: flex;
-      position: absolute;
-      left: 0;
-      right: 0;
-      gap: 10px;
-      bottom: 5%; /* Adjust bottom spacing as needed */
-      margin: auto;
-  
-      .icon {
-        width: 50px;
-        height: 50px;
-        border: 1px solid #999;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-    }
-  
-    @media screen and (max-width: 768px) {
-      .container {
-        width: 200vw; /* Adjust width for smaller screens */
-      }
-    }
-  
-    @media screen and (max-width: 480px) {
-      .container {
-        width: 100vw; /* Adjust width for even smaller screens */
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.9); /* Darken background on hover */
       }
     }
   }
-  
+
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 200vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+  }
+}
