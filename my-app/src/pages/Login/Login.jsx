@@ -38,7 +38,7 @@ const Login = () => {
     <>
       <Meta title="Login" />
       <BreadCrumb title="LOGIN" />
-      {userLoggedIn && <Navigate to={'/home'} replace={true} />}
+      {userLoggedIn && <Navigate to={'/photo'} replace={true} />}
       <main className="container-xxl">
         <div className="login-card">
           <h3>Welcome Back</h3>
