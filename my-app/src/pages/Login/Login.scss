@@ -1,5 +1,3 @@
-// Login.scss
-
 .login-wrapper {
   background-color: #f7f7f7;
   min-height: 100vh;
@@ -91,6 +89,7 @@
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .login-card {
+    width: 90%;
     padding: 20px;
 
     h3 {
