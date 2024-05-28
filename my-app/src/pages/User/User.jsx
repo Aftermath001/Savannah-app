@@ -1,8 +1,6 @@
-// User.js
 import React, { useEffect, useState } from "react";
 import BreadCrumb from "../../components/Breadcrumb/Breadcrumb";
 import Meta from "../../components/Meta/Meta";
-
 import "./User.scss";
 
 const User = () => {
@@ -33,9 +31,9 @@ const User = () => {
       <BreadCrumb title="USER" />
       <div className="about-wrapper home-wrapper-2 py-5">
         <div className="container-xxl">
-          <div className="row">
+          <div className="row user-cards-row">
             {currentUsers.map((user) => (
-              <div key={user.id} className="col-6">
+              <div key={user.id} className="col-12 col-md-6 col-lg-3">
                 <div
                   className="card user-card"
                   onClick={() => handleUserClick(user)}
@@ -53,25 +51,25 @@ const User = () => {
             ))}
           </div>
         </div>
+        {/* Pagination */}
+        <nav>
+          <ul className="pagination">
+            {Array.from(
+              { length: Math.ceil(users.length / usersPerPage) },
+              (_, i) => (
+                <li key={i} className="page-item">
+                  <button
+                    onClick={() => paginate(i + 1)}
+                    className="page-link"
+                  >
+                    {i + 1}
+                  </button>
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
       </div>
-      {/* Pagination */}
-      <nav>
-        <ul className="pagination">
-          {Array.from(
-            { length: Math.ceil(users.length / usersPerPage) },
-            (_, i) => (
-              <li key={i} className="page-item">
-                <button
-                  onClick={() => paginate(i + 1)}
-                  className="page-link"
-                >
-                  {i + 1}
-                </button>
-              </li>
-            )
-          )}
-        </ul>
-      </nav>
       {/* Display selected user info */}
       {selectedUser && (
         <div className="user-info-container">
