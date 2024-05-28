@@ -1,5 +1,3 @@
-// Photo.js
-
 import React, { useEffect, useState } from "react";
 import BreadCrumb from '../../components/Breadcrumb/Breadcrumb';
 import Meta from '../../components/Meta/Meta';
@@ -18,12 +16,12 @@ const Photo = () => {
       .then((photos) => setPhotos(photos));
   }, []);
 
-  function handleUpdate(updatedPhoto){
+  function handleUpdate(updatedPhoto) {
     const updatedPhotos = photos.map((photo) =>
-    photo.id === updatedPhoto.id ? updatedPhoto : photo
-  );
-  setPhotos(updatedPhotos);
-  setEditId(null)
+      photo.id === updatedPhoto.id ? updatedPhoto : photo
+    );
+    setPhotos(updatedPhotos);
+    setEditId(null);
   }
 
   // Pagination Logic
